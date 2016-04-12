@@ -5,9 +5,11 @@
         Selfie Gif Reaction Club</title>
 <script src="scripts/gifshot.js"></script>
 </head>
+<body>
 <h1>The Selfie Reaction Gif Club</h1>
-<h2>Rule 1 is <a href="rules">read the rules</a>
+<h2>Rule 1 is <a href="rules">read the rules</a></h2>
     <hr />
+    <p>I guess I'll put some sort of content here</p>
 
 <button type="submit" onclick="createGIF()">PRESS TO CREATE GIF</button>
 <div id="webcam_preview">
@@ -15,23 +17,21 @@
 </div>
 <div id="output">
 </div>
-<body>
 </body>
 <script type="text/javascript">
  gifshot.createGIF({'webcamVideoElement': document.getElementById('webcam_stream')}, function(obj){;});
  function createGIF() {
-        gifshot.createGIF({'webcamVideoElement':
-                           document.getElementById('webcam_stream')},
-                          function(obj) {
-                              if(!obj.error) {
-                                  var image = obj.image,
-                                      animatedImage = document.createElement('img');
-                                  animatedImage.src = image;
-                                  document.getElementById('output').appendChild(animatedImage);
-                              }
-                          });
-    }
+     gifshot.createGIF({'webcamVideoElement':
+                        document.getElementById('webcam_stream')},
+                       function(obj) {
+                           if(!obj.error) {
+                               var image = obj.image,
+                                   animatedImage = document.createElement('img');
+                               animatedImage.src = image;
+                               document.getElementById('output').appendChild(animatedImage);
+                           }
+                       });
+ }
 </script>
 
-</body>
 </html>
